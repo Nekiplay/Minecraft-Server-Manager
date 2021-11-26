@@ -58,6 +58,8 @@ namespace Server_Manager
                         label1.Text = "Майнкрафт версия: " + mod.mcversion + "\n";
                         label1.Text += "Версия мода: " + mod.version + "\n";
                         label1.Text += "Оригинальная ссылка: " + mod.link + "\n";
+                        this.Size = new System.Drawing.Size(644, 262);
+                        guna2GroupBox2.Visible = true;
                     }
                 }
             }

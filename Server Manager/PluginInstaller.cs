@@ -36,6 +36,8 @@ namespace Server_Manager
                         label1.Text = "Майнкрафт версия: " + plugin.mcversion + "\n";
                         label1.Text += "Версия плагина: " + plugin.version + "\n";
                         label1.Text += "Оригинальная ссылка: " + plugin.link + "\n";
+                        this.Size = new System.Drawing.Size(643, 259);
+                        guna2GroupBox2.Visible = true;
                     }
                 }
             }

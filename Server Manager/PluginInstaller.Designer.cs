@@ -49,6 +49,7 @@ namespace Server_Manager
             this.guna2GroupBox2.Size = new System.Drawing.Size(300, 200);
             this.guna2GroupBox2.TabIndex = 5;
             this.guna2GroupBox2.Text = "Информация о выбранном плагине";
+            this.guna2GroupBox2.Visible = false;
             // 
             // label1
             // 
@@ -103,13 +104,14 @@ namespace Server_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 220);
+            this.ClientSize = new System.Drawing.Size(321, 223);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PluginInstaller";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Установка плангинов";
             this.Load += new System.EventHandler(this.PluginInstaller_Load);
             this.guna2GroupBox2.ResumeLayout(false);
