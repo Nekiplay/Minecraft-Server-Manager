@@ -8,12 +8,13 @@ namespace Server_Manager.Databases
         public List<CoreInformation> cores = new List<CoreInformation>()
         {
             /* Spigot */
-            new CoreInformation("Spigot", "1.0", "1.7.10", "0A8A23442FF5DA3CB9FC4AB50BC8D79F"),
+            new CoreInformation("Spigot", "1.0", "1.12.2", "0A8A23442FF5DA3CB9FC4AB50BC8D79F"),
 
             /* PaperSpigot */
 
             /* Forge */
-            new CoreInformation("Forge", "1.0", "1.7.10", "ADD0FBA161C4652A96EFB4264EC2D9EC"),
+            new CoreInformation("Forge", "10.13.4.1614", "1.7.10", "ADD0FBA161C4652A96EFB4264EC2D9EC"),
+            new CoreInformation("Forge", "14.23.5.2855", "1.12.2", "02FCC447BB8938E5214292E4D36EC949"),
         };
 
         public CoreInformation GetCore(string path)
