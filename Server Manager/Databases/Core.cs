@@ -12,6 +12,9 @@ namespace Server_Manager.Databases
 
             /* PaperSpigot */
 
+            /* Kettle */
+            new CoreInformation("Kettle", "1.0", "1.12.2", "ABADC009562D97F3588C97CBE87F16E8"),
+
             /* KCauldron */
             new CoreInformation("KCauldron", "1420.120", "1.7.10", "D5F676A6200ADC293F3D1FDBE6218F25"),
             new CoreInformation("KCauldron", "1448.133", "1.7.10", "23ADDC86C9D58E466A19BFDFFA351466"),
