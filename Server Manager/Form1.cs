@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Server_Manager
@@ -27,7 +20,7 @@ namespace Server_Manager
             if (core != null)
             {
                 this.label1.Text = "Ядро: " + core.name;
-                this.label2.Text = "Версия майнкрафта: " + core.mcversion;
+                this.label2.Text = "Версия майнкрафта: " + core.mcversion.ToVersion();
             }
 
             if (Directory.Exists(Environment.CurrentDirectory + "\\plugins"))
@@ -63,7 +56,7 @@ namespace Server_Manager
             var core = coremanager.GetCore(Environment.CurrentDirectory);
             if (core != null)
             {
-                PluginInstaller pluginInstaller = new PluginInstaller();
+                PluginInstaller pluginInstaller = new PluginInstaller(core.mcversion);
                 pluginInstaller.Show();
             }
             else

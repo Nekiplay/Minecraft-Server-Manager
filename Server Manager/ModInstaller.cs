@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Server_Manager
 {
     public partial class ModInstaller : Form
     {
-        string version = "";
-        public ModInstaller(string version)
+        Versions version = Versions.Version_null;
+        public ModInstaller(Versions version)
         {
             this.version = version;
             InitializeComponent();

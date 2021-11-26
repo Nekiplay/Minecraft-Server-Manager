@@ -1,28 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Server_Manager
 {
     public partial class PluginInstaller : Form
     {
-        public PluginInstaller()
+        private Versions version = Versions.Version_null;
+        public PluginInstaller(Versions version)
         {
+            this.version = version;
             InitializeComponent();
         }
 
         private void PluginInstaller_Load(object sender, EventArgs e)
         {
             Databases.Plugin pluginmanager = new Databases.Plugin();
-            foreach (var plugin in pluginmanager.plugins)
+            foreach (var plugin in pluginmanager.GetPluginsByMinecraftVersion(version))
             {
                 listBox1.Items.Add(plugin.name);
             }
@@ -34,7 +29,7 @@ namespace Server_Manager
             {
                 string name = listBox1.SelectedItem.ToString();
                 Databases.Plugin pluginmanager = new Databases.Plugin();
-                foreach (var plugin in pluginmanager.plugins)
+                foreach (var plugin in pluginmanager.GetPluginsByMinecraftVersion(version))
                 {
                     if (plugin.name == name)
                     {
@@ -52,7 +47,7 @@ namespace Server_Manager
             {
                 string name = listBox1.SelectedItem.ToString();
                 Databases.Plugin pluginmanager = new Databases.Plugin();
-                foreach (var plugin in pluginmanager.plugins)
+                foreach (var plugin in pluginmanager.GetPluginsByMinecraftVersion(version))
                 {
                     if (plugin.name == name)
                     {

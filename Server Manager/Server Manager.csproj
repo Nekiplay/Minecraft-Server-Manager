@@ -202,6 +202,7 @@
     <Compile Include="Databases\Core.cs" />
     <Compile Include="Databases\Mod.cs" />
     <Compile Include="Databases\Plugin.cs" />
+    <Compile Include="Databases\Version.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
