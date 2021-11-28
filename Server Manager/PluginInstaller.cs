@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Server_Manager
@@ -33,8 +35,7 @@ namespace Server_Manager
                 {
                     if (plugin.name == name)
                     {
-                        label1.Text = "Майнкрафт версия: " + plugin.mcversion + "\n";
-                        label1.Text += "Версия плагина: " + plugin.version + "\n";
+                        label1.Text = "Версия плагина: " + plugin.version + "\n";
                         label1.Text += "Оригинальная ссылка: " + plugin.link + "\n";
                         this.Size = new System.Drawing.Size(643, 259);
                         guna2GroupBox2.Visible = true;
@@ -43,7 +44,7 @@ namespace Server_Manager
             }
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private async void guna2Button1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem != null)
             {
@@ -53,15 +54,27 @@ namespace Server_Manager
                 {
                     if (plugin.name == name)
                     {
-                        using (WebClient wc = new WebClient())
+                        if (Directory.Exists("plugins"))
                         {
-                            if (Directory.Exists("plugins"))
+                            await Task.Factory.StartNew(() =>
                             {
-                                wc.DownloadFile(plugin.directlink, "plugins\\" + plugin.name + " [" + plugin.mcversion + "] [" + plugin.version + "].jar");
-                            }
+                                using (WebClient wc = new WebClient())
+                                {
+                                    wc.DownloadFile(plugin.directlink, "plugins\\" + plugin.name + " [" + plugin.version + "].jar");
+                                }
+                            });
                         }
                     }
                 }
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            string s = Regex.Match(label1.Text , "Оригинальная ссылка: (.*)").Groups[1].Value;
+            if (s != "")
+            {
+                Clipboard.SetText(s);
             }
         }
     }

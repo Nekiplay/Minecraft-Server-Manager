@@ -1,5 +1,60 @@
-﻿public static class Version
+﻿using System.Collections.Generic;
+
+public static class Version
 {
+    public static List<Versions> Version_1_17to1_17_1
+    {
+        get
+        {
+            return new List<Versions>()
+            {
+                Versions.Version_1_17, Versions.Version_1_17_1
+            };
+        }
+    }
+    public static List<Versions> Version_1_16to1_17_1
+    {
+        get
+        {
+            return new List<Versions>()
+            {
+                Versions.Version_1_16, Versions.Version_1_16_1, Versions.Version_1_16_2, Versions.Version_1_16_3, Versions.Version_1_16_4, Versions.Version_1_16_5, Versions.Version_1_17, Versions.Version_1_17_1
+            };
+        }
+    }
+    public static List<Versions> Version_1_8_9to1_17_1
+    {
+        get
+        {
+            return new List<Versions>()
+            {
+                Versions.Version_1_8, Versions.Version_1_8_2, Versions.Version_1_8_3, Versions.Version_1_8_4, Versions.Version_1_8_5, Versions.Version_1_8_6, Versions.Version_1_8_7, Versions.Version_1_8_8, Versions.Version_1_8_9, Versions.Version_1_9, Versions.Version_1_9_2, Versions.Version_1_9_4, Versions.Version_1_10, Versions.Version_1_10_1, Versions.Version_1_10_2, Versions.Version_1_11, Versions.Version_1_12, Versions.Version_1_12_1, Versions.Version_1_12_2, Versions.Version_1_13, Versions.Version_1_13_1, Versions.Version_1_13_2, Versions.Version_1_14, Versions.Version_1_14_1, Versions.Version_1_14_2, Versions.Version_1_14_3, Versions.Version_1_14_4, Versions.Version_1_15, Versions.Version_1_15_1, Versions.Version_1_15_2, Versions.Version_1_16, Versions.Version_1_16_1, Versions.Version_1_16_2, Versions.Version_1_16_3, Versions.Version_1_16_4, Versions.Version_1_16_5, Versions.Version_1_17, Versions.Version_1_17_1
+            };
+        }
+    }
+
+    public static List<Versions> Version_1_7_10to1_17_1
+    {
+        get
+        {
+            return new List<Versions>()
+            {
+                Versions.Version_1_7_10, Versions.Version_1_8, Versions.Version_1_8_2, Versions.Version_1_8_3, Versions.Version_1_8_4, Versions.Version_1_8_5, Versions.Version_1_8_6, Versions.Version_1_8_7, Versions.Version_1_8_8, Versions.Version_1_8_9, Versions.Version_1_9, Versions.Version_1_9_2, Versions.Version_1_9_4, Versions.Version_1_10, Versions.Version_1_10_1, Versions.Version_1_10_2, Versions.Version_1_11, Versions.Version_1_12, Versions.Version_1_12_1, Versions.Version_1_12_2, Versions.Version_1_13, Versions.Version_1_13_1, Versions.Version_1_13_2, Versions.Version_1_14, Versions.Version_1_14_1, Versions.Version_1_14_2, Versions.Version_1_14_3, Versions.Version_1_14_4, Versions.Version_1_15, Versions.Version_1_15_1, Versions.Version_1_15_2, Versions.Version_1_16, Versions.Version_1_16_1, Versions.Version_1_16_2, Versions.Version_1_16_3, Versions.Version_1_16_4, Versions.Version_1_16_5, Versions.Version_1_17, Versions.Version_1_17_1
+            };
+        }
+    }
+
+    public static List<Versions> Version_1_7_2to1_17_1
+    {
+        get
+        {
+            return new List<Versions>()
+            {
+                Versions.Version_1_7_2, Versions.Version_1_7_5, Versions.Version_1_7_8, Versions.Version_1_7_9, Versions.Version_1_7_10, Versions.Version_1_8, Versions.Version_1_8_2, Versions.Version_1_8_3, Versions.Version_1_8_4, Versions.Version_1_8_5, Versions.Version_1_8_6, Versions.Version_1_8_7, Versions.Version_1_8_8, Versions.Version_1_8_9, Versions.Version_1_9, Versions.Version_1_9_2, Versions.Version_1_9_4, Versions.Version_1_10, Versions.Version_1_10_1, Versions.Version_1_10_2, Versions.Version_1_11, Versions.Version_1_12, Versions.Version_1_12_1, Versions.Version_1_12_2, Versions.Version_1_13, Versions.Version_1_13_1, Versions.Version_1_13_2, Versions.Version_1_14, Versions.Version_1_14_1, Versions.Version_1_14_2, Versions.Version_1_14_3, Versions.Version_1_14_4, Versions.Version_1_15, Versions.Version_1_15_1, Versions.Version_1_15_2, Versions.Version_1_16, Versions.Version_1_16_1, Versions.Version_1_16_2, Versions.Version_1_16_3, Versions.Version_1_16_4, Versions.Version_1_16_5, Versions.Version_1_17, Versions.Version_1_17_1
+            };
+        }
+    }
+
     public static string ToVersion(this Versions version)
     {
         switch (version)
@@ -11,7 +66,7 @@
             case (Versions.Version_1_4_7):
                 return "1.4.7";
             case (Versions.Version_1_5_1):
-                return "1.5.2";
+                return "1.5.1";
             case (Versions.Version_1_5_2):
                 return "1.5.2";
             case (Versions.Version_1_6_2):
@@ -64,6 +119,10 @@
                 return "1.11.1";
             case (Versions.Version_1_11_2):
                 return "1.11.2";
+            case (Versions.Version_1_12):
+                return "1.12";
+            case (Versions.Version_1_12_1):
+                return "1.12.1";
             case (Versions.Version_1_12_2):
                 return "1.12.2";
             case (Versions.Version_1_13):

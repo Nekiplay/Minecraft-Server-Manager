@@ -59,6 +59,7 @@ namespace Server_Manager
             this.label1.Size = new System.Drawing.Size(289, 149);
             this.label1.TabIndex = 0;
             this.label1.Text = "null";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // guna2GroupBox1
             // 
@@ -66,7 +67,7 @@ namespace Server_Manager
             this.guna2GroupBox1.Controls.Add(this.guna2Button1);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(12, 12);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(11, 12);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
             this.guna2GroupBox1.Size = new System.Drawing.Size(300, 200);

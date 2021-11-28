@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Server_Manager
@@ -14,7 +16,7 @@ namespace Server_Manager
             InitializeComponent();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private async void guna2Button1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem != null)
             {
@@ -24,12 +26,15 @@ namespace Server_Manager
                 {
                     if (mod.name == name)
                     {
-                        using (WebClient wc = new WebClient())
+                        if (Directory.Exists("mods"))
                         {
-                            if (Directory.Exists("mods"))
+                            await Task.Factory.StartNew(() =>
                             {
-                                wc.DownloadFile(mod.directlink, "mods\\" + mod.name + " [" + mod.mcversion + "] [" + mod.version + "].jar");
-                            }
+                                using (WebClient wc = new WebClient())
+                                {
+                                    wc.DownloadFile(mod.directlink, "mods\\" + mod.name + " [" + mod.mcversion.First().ToVersion() + "] [" + mod.version + "].jar");
+                                }
+                            });
                         }
                     }
                 }

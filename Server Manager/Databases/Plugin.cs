@@ -7,7 +7,9 @@ namespace Server_Manager.Databases
     {
         public List<PluginInformation> plugins = new List<PluginInformation>()
         {
-            new PluginInformation("Decent Holograms", "2.0.8", new List<Versions>() { Versions.Version_1_8, Versions.Version_1_8_2, Versions.Version_1_8_3, Versions.Version_1_8_4, Versions.Version_1_8_5, Versions.Version_1_8_6, Versions.Version_1_8_7, Versions.Version_1_8_8, Versions.Version_1_8_9, Versions.Version_1_9, Versions.Version_1_9_2, Versions.Version_1_9_4, Versions.Version_1_10, Versions.Version_1_10_1, Versions.Version_1_10_2, Versions.Version_1_11, Versions.Version_1_12, Versions.Version_1_12_1, Versions.Version_1_12_2, Versions.Version_1_13, Versions.Version_1_13_1, Versions.Version_1_13_2, Versions.Version_1_14, Versions.Version_1_14_1, Versions.Version_1_14_2, Versions.Version_1_14_3, Versions.Version_1_14_4, Versions.Version_1_15, Versions.Version_1_15_1, Versions.Version_1_15_2, Versions.Version_1_16, Versions.Version_1_16_1, Versions.Version_1_16_2, Versions.Version_1_16_3, Versions.Version_1_16_4, Versions.Version_1_16_5, Versions.Version_1_17, Versions.Version_1_17_1}, "https://www.spigotmc.org/resources/decent-holograms-placeholderapi-support-no-dependencies.96927/", "https://github.com/Nekiplay/MinecraftFiles/raw/main/plugins/DecentHolograms.jar", "0E444EDF5BA6F55907D0CB4965223904"),
+            new PluginInformation("Decent Holograms", "2.0.8", Version.Version_1_8_9to1_17_1, new List<PluginInformation.Type>() { PluginInformation.Type.Design }, "https://www.spigotmc.org/resources/decent-holograms-placeholderapi-support-no-dependencies.96927", "https://github.com/Nekiplay/MinecraftFiles/raw/main/plugins/DecentHolograms.jar", "0E444EDF5BA6F55907D0CB4965223904"),
+            new PluginInformation("InvisibleItemFrames", "2.2.2", Version.Version_1_16to1_17_1, new List<PluginInformation.Type>() { PluginInformation.Type.Design }, "https://www.spigotmc.org/resources/invisibleitemframes-better-item-frames.85085", "https://github.com/Nekiplay/MinecraftFiles/raw/main/plugins/InvisibleItemFrames-2.2.2.jar", "BB95A7FA81A2237EC3FCCB48FBD98D2F"),
+            new PluginInformation("Badlion Client Api", "1.2.3", Version.Version_1_17to1_17_1, new List<PluginInformation.Type>() { PluginInformation.Type.Design }, "https://www.spigotmc.org/resources/badlion-client-api.97949/", "https://github.com/Nekiplay/MinecraftFiles/raw/main/plugins/badlionclientmodapispigot-1.17.jar", "11B92B075A497DB9AC9020DBC9FA2C80"),
         };
 
 
@@ -46,22 +48,32 @@ namespace Server_Manager.Databases
 
         public class PluginInformation
         {
+            public enum Type
+            {
+                SkyBlock,
+                Economy,
+                PvP,
+                Survival,
+                Design,
+                Unknow,
+            }
             public string name;
             public string version;
             public List<Versions> mcversion;
+            public List<Type> type;
 
             public string link;
             public string directlink;
 
             public string hash;
 
-            public PluginInformation(string Name, string Version, List<Versions> MCVersion, string link, string directlink, string Hash)
+            public PluginInformation(string Name, string Version, List<Versions> MCVersion, List<Type> type, string link, string directlink, string Hash)
             {
                 this.name = Name;
                 this.version = Version;
                 this.mcversion = MCVersion;
                 this.link = link;
-                this.directlink = link;
+                this.directlink = directlink;
                 this.hash = Hash;
             }
         }
